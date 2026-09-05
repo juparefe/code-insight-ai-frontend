@@ -1,0 +1,59 @@
+<section class="findings-card">
+  <div class="section-header">
+    <span class="eyebrow">Hallazgos</span>
+
+    <h2>Problemas detectados</h2>
+
+    <p>
+      Riesgos y problemas identificados a partir del análisis del repositorio.
+    </p>
+  </div>
+
+  @if (findings.length > 0) {
+    <div class="findings-list">
+      @for (finding of findings; track finding.title) {
+        <article
+          class="finding"
+          [class.finding-high]="finding.severity === 'HIGH'"
+          [class.finding-medium]="finding.severity === 'MEDIUM'"
+          [class.finding-low]="finding.severity === 'LOW'"
+        >
+          <div class="finding-header">
+            <div class="finding-title">
+              <span class="severity">
+                {{ getSeverityLabel(finding.severity) }}
+              </span>
+
+              <h3>{{ finding.title }}</h3>
+            </div>
+
+            <span class="category">
+              {{ getCategoryLabel(finding.category) }}
+            </span>
+          </div>
+
+          <p class="description">
+            {{ finding.description }}
+          </p>
+
+          @if (finding.evidence.length > 0) {
+            <div class="evidence">
+              <span class="evidence-title">Evidencia</span>
+
+              <ul>
+                @for (item of finding.evidence; track item) {
+                  <li>{{ item }}</li>
+                }
+              </ul>
+            </div>
+          }
+        </article>
+      }
+    </div>
+  } @else {
+    <div class="empty-state">
+      <strong>No se detectaron problemas.</strong>
+      <span>El análisis no encontró hallazgos relevantes.</span>
+    </div>
+  }
+</section>

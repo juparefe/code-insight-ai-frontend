@@ -1,0 +1,140 @@
+.recommendations-card {
+  margin-top: 16px;
+  padding: 24px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.section-header {
+  margin-bottom: 24px;
+
+  .eyebrow {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #6b7280;
+  }
+
+  h2 {
+    margin: 0 0 8px;
+    font-size: 24px;
+  }
+
+  p {
+    margin: 0;
+    color: #6b7280;
+    line-height: 1.5;
+  }
+}
+
+.recommendations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.recommendation {
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid #d1d5db;
+  border-radius: 10px;
+  background: #f9fafb;
+}
+
+.recommendation-high {
+  border-left-color: #dc2626;
+}
+
+.recommendation-medium {
+  border-left-color: #f59e0b;
+}
+
+.recommendation-low {
+  border-left-color: #6b7280;
+}
+
+.recommendation-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  h3 {
+    margin: 0;
+    font-size: 17px;
+  }
+}
+
+.priority {
+  display: inline-flex;
+  flex-shrink: 0;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.recommendation-high .priority {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.recommendation-medium .priority {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.recommendation-low .priority {
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+.description {
+  margin: 14px 0 16px;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+.reason {
+  padding: 14px 16px;
+  border-radius: 8px;
+  background: #ffffff;
+
+  .reason-title {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #6b7280;
+  }
+
+  p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #4b5563;
+  }
+}
+
+.empty-state {
+  padding: 32px;
+  text-align: center;
+  border: 1px dashed #d1d5db;
+  border-radius: 8px;
+  color: #6b7280;
+}
+
+@media (max-width: 768px) {
+  .recommendation-title {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

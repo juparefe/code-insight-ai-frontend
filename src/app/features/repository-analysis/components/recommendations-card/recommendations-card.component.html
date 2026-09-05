@@ -1,0 +1,49 @@
+<section class="recommendations-card">
+  <div class="section-header">
+    <span class="eyebrow">Plan de mejora</span>
+
+    <h2>Recomendaciones</h2>
+
+    <p>
+      Acciones sugeridas a partir de los problemas identificados en el
+      repositorio.
+    </p>
+  </div>
+
+  @if (recommendations.length > 0) {
+    <div class="recommendations-list">
+      @for (recommendation of recommendations; track recommendation.title) {
+        <article
+          class="recommendation"
+          [class.recommendation-high]="recommendation.priority === 'HIGH'"
+          [class.recommendation-medium]="recommendation.priority === 'MEDIUM'"
+          [class.recommendation-low]="recommendation.priority === 'LOW'"
+        >
+          <div class="recommendation-header">
+            <div class="recommendation-title">
+              <span class="priority">
+                {{ getPriorityLabel(recommendation.priority) }}
+              </span>
+
+              <h3>{{ recommendation.title }}</h3>
+            </div>
+          </div>
+
+          <p class="description">
+            {{ recommendation.description }}
+          </p>
+
+          <div class="reason">
+            <span class="reason-title">¿Por qué?</span>
+
+            <p>{{ recommendation.reason }}</p>
+          </div>
+        </article>
+      }
+    </div>
+  } @else {
+    <div class="empty-state">
+      No se generaron recomendaciones para este repositorio.
+    </div>
+  }
+</section>

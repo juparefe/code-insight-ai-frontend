@@ -1,3 +1,10 @@
+export enum AnalysisStatus {
+  IDLE = 'IDLE',
+  LOADING = 'LOADING',
+  SUCCESS = 'SUCCESS',
+  ERROR = 'ERROR',
+}
+
 export type ArchitecturePattern =
   | 'MONOLITH'
   | 'MVC'

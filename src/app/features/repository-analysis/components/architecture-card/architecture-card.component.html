@@ -1,0 +1,31 @@
+<section class="architecture-card">
+  <div class="section-header">
+    <span class="eyebrow">Arquitectura inferida</span>
+
+    <h2>{{ architectureLabel }}</h2>
+  </div>
+
+  <div class="confidence">
+    <div class="confidence-header">
+      <span>Confianza</span>
+      <strong>{{ confidencePercentage }}%</strong>
+    </div>
+
+    <div class="confidence-bar">
+      <div
+        class="confidence-value"
+        [style.width.%]="confidencePercentage"
+      ></div>
+    </div>
+  </div>
+
+  <div class="evidence">
+    <h3>Evidencias encontradas</h3>
+
+    <ul>
+      @for (item of architecture.evidence; track item) {
+        <li>{{ item }}</li>
+      }
+    </ul>
+  </div>
+</section>

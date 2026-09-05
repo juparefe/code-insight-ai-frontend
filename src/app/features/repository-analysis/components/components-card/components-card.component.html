@@ -1,0 +1,51 @@
+<section class="components-card">
+  <div class="section-header">
+    <span class="eyebrow">Estructura</span>
+
+    <h2>Componentes detectados</h2>
+
+    <p>
+      Componentes relevantes identificados durante el análisis del repositorio.
+    </p>
+  </div>
+
+  @if (components.length > 0) {
+    <div class="components-list">
+      @for (component of components; track component.path) {
+        <article class="component">
+          <div class="component-header">
+            <span class="component-type">
+              {{ getComponentTypeLabel(component.type) }}
+            </span>
+
+            <h3>{{ component.name }}</h3>
+          </div>
+
+          <code class="component-path">
+            {{ component.path }}
+          </code>
+
+          <p class="responsibility">
+            {{ component.responsibility }}
+          </p>
+
+          @if (component.evidence.length > 0) {
+            <div class="evidence">
+              <span class="evidence-title">Evidencia</span>
+
+              <ul>
+                @for (item of component.evidence; track item) {
+                  <li>{{ item }}</li>
+                }
+              </ul>
+            </div>
+          }
+        </article>
+      }
+    </div>
+  } @else {
+    <div class="empty-state">
+      No se detectaron componentes relevantes.
+    </div>
+  }
+</section>

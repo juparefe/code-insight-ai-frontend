@@ -1,12 +1,29 @@
 <main class="repository-analysis">
   <header>
     <h1>Code Insight AI</h1>
-    <p>
-      Ingeniería inversa automatizada de repositorios.
-    </p>
+    <p>Ingeniería inversa automatizada de repositorios.</p>
   </header>
 
-  <app-repository-input
-    (analyze)="analyzeRepository($event)"
-  />
+  <app-repository-input (analyze)="analyzeRepository($event)" />
+
+  @if (status() === 'LOADING') {
+    <section>
+      <p>Analizando repositorio...</p>
+    </section>
+  }
+
+  @if (status() === 'ERROR') {
+    <section>
+      <p>{{ errorMessage }}</p>
+    </section>
+  }
+
+  @if (status() === 'SUCCESS' && analysisResult) {
+    <app-analysis-summary [functionalDescription]="analysisResult.functionalDescription" />
+    <app-architecture-card [architecture]="analysisResult.architecture" />
+    <app-technologies-card [technologies]="analysisResult.technologies" />
+    <app-components-card [components]="analysisResult.components" />
+    <app-findings-card [findings]="analysisResult.findings" />
+    <app-recommendations-card [recommendations]="analysisResult.recommendations" />
+  }
 </main>

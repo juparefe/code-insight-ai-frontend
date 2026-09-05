@@ -1,0 +1,38 @@
+<section class="technologies-card">
+  <div class="section-header">
+    <span class="eyebrow">Stack tecnológico</span>
+
+    <h2>Tecnologías detectadas</h2>
+
+    <p>
+      Tecnologías identificadas a partir de la evidencia encontrada en el
+      repositorio.
+    </p>
+  </div>
+
+  <div class="technologies-list">
+    @for (technology of technologies; track technology.name) {
+      <article class="technology">
+        <div class="technology-header">
+          <h3>{{ technology.name }}</h3>
+
+          <span class="role">
+            {{ technology.role }}
+          </span>
+        </div>
+
+        @if (technology.evidence.length > 0) {
+          <div class="evidence">
+            <span class="evidence-title">Evidencia</span>
+
+            <ul>
+              @for (item of technology.evidence; track item) {
+                <li>{{ item }}</li>
+              }
+            </ul>
+          </div>
+        }
+      </article>
+    }
+  </div>
+</section>
