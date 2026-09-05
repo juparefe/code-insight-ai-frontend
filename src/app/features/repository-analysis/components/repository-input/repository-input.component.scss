@@ -1,0 +1,31 @@
+.repository-input {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px;
+
+  h2 {
+    margin-bottom: 8px;
+  }
+
+  p {
+    margin-bottom: 24px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  input {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+  }
+
+  button {
+    align-self: flex-start;
+    padding: 12px 20px;
+    cursor: pointer;
+  }
+}

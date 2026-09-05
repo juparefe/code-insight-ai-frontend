@@ -1,0 +1,27 @@
+<section class="repository-input">
+  <h2>Analizar repositorio</h2>
+
+  <p>
+    Ingresa la URL de un repositorio público de GitHub para analizar
+    automáticamente su estructura, tecnologías y arquitectura.
+  </p>
+
+  <form (ngSubmit)="submit()">
+    <label for="repository-url">
+      URL del repositorio
+    </label>
+
+    <input
+      id="repository-url"
+      type="url"
+      name="repositoryUrl"
+      [(ngModel)]="repositoryUrl"
+      placeholder="https://github.com/usuario/proyecto"
+      autocomplete="url"
+    />
+
+    <button type="submit">
+      Analizar repositorio
+    </button>
+  </form>
+</section>
