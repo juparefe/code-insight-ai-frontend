@@ -7,8 +7,19 @@
   <app-repository-input (analyze)="analyzeRepository($event)" />
 
   @if (status() === 'LOADING') {
-    <section>
-      <p>Analizando repositorio...</p>
+    <section class="analysis-loading" role="status" aria-live="polite">
+      <div class="loading-spinner" aria-hidden="true"></div>
+
+      <div class="loading-content">
+        <h2>Analizando repositorio</h2>
+
+        <p>
+          Estamos revisando la estructura, tecnologías, arquitectura y posibles hallazgos del
+          proyecto.
+        </p>
+
+        <span> Los repositorios grandes pueden tardar varios minutos. </span>
+      </div>
     </section>
   }
 
