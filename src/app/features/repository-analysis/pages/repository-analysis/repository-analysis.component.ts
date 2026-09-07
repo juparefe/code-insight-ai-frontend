@@ -41,7 +41,6 @@ export class RepositoryAnalysisComponent {
       next: (result) => {
         this.analysisResult = result;
         this.status.set(AnalysisStatus.SUCCESS);
-        console.log('Repository analysis result:', result);
       },
       error: (error) => {
         this.status.set(AnalysisStatus.ERROR);
