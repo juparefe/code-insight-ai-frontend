@@ -1,5 +1,4 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { RepositoryAnalysisComponent } from './features/repository-analysis/pages/repository-analysis/repository-analysis.component';
 
 @Component({
