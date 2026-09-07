@@ -1,59 +1,60 @@
-# CodeInsightAiFrontend
+# Code-Insight-AI
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.3.
+Este es el repositorio frontend de Code Insight AI, proporciona una interfaz de usuario para interactuar con el backend del sistema. Permite analizar repositorios de código (mediante una URL de GitHub o un archivo ZIP) y visualizar el resultado del análisis generado con IA. Aplicando diferentes conceptos como:
 
-## Development server
+- Consumo de API REST mediante HttpClient
+- Procesamiento asíncrono con jobs y sondeo (polling) de estado
+- Programación reactiva con RxJS (defer, switchMap, filter, take, timer)
+- Manejo de estado con Signals de Angular
+- Componentes standalone y arquitectura orientada a features
+- Configuración por entornos (desarrollo y producción)
+- Visualización de datos del análisis (arquitectura, tecnologías, componentes, hallazgos y recomendaciones)
+- Formularios con FormsModule
+- Pruebas unitarias con Vitest en formato given / when / then
 
-To start a local development server, run:
+## Requisitos Previos
 
-```bash
-ng serve
-```
+Asegúrate de tener instalado lo siguiente:
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Node.js**: [Descargar Node.js](https://nodejs.org/)
+- **npm** (administrador de paquetes de Node.js): Viene incluido con Node.js
+- **Angular CLI**: Instálalo globalmente con `npm install -g @angular/cli`
+- **Lenguajes utilizados**: TypeScript
+- **Frameworks, herramientas o librerias utilizados**: Angular, RxJS, Vitest, ESLint, Prettier
 
-## Code scaffolding
+## Scripts Disponibles
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- **Instalar Dependencias**: `npm install`
+- **Iniciar la Aplicación**: `npm start`
+- **Construir la Aplicación**: `npm run build`
+- **Construir en modo observador**: `npm run watch`
+- **Ejecutar Pruebas Unitarias (con cobertura)**: `npm test`
+- **Linteo del Código**: `npm run lint`
 
-```bash
-ng generate component component-name
-```
+## Paso a paso para ejecutar el repositorio
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Para poder utilizar este repositorio debes seguir estas instrucciones y luego dirigirte al Repositorio Backend Code Insight AI y seguir las instrucciones para levantar el complemento de la aplicacion
 
-```bash
-ng generate --help
-```
+1. Clonar el repositorio en el entorno local utilizando el comando
 
-## Building
+   ```bash
+   git clone https://github.com/juparefe/code-insight-ai-frontend.git
+   ```
 
-To build the project run:
+2. Abrir la carpeta clonada utilizando algun editor de codigo
 
-```bash
-ng build
-```
+3. Instala las dependencias:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+   ```bash
+   npm install
+   ```
 
-## Running unit tests
+4. Verifica la configuración del entorno en `src/environments/environment.ts` y ajusta `apiBaseUrl` para que apunte al backend (por defecto `http://localhost:3000/api/v1`)
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+5. Ejecuta el siguiente comando para iniciar el servidor:
 
-```bash
-ng test
-```
+   ```bash
+   npm start
+   ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+6. Por defecto la aplicacion se levanta en el puerto 4200
